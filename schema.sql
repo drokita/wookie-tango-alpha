@@ -61,6 +61,24 @@ CREATE TABLE `CATEGORY` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `COMMENTS`
+--
+
+DROP TABLE IF EXISTS `COMMENTS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `COMMENTS` (
+  `commentid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `blogid` bigint(20) NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `userid` bigint(20) NOT NULL,
+  `comment` mediumtext NOT NULL,
+  PRIMARY KEY (`commentid`,`blogid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `USERS`
 --
 
@@ -86,4 +104,4 @@ CREATE TABLE `USERS` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-24 16:59:30
+-- Dump completed on 2016-07-26 15:58:48
