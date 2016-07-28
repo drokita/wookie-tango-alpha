@@ -7,7 +7,7 @@
 
      <servlet>
         <servlet-name>HelloWorld</servlet-name>
-        <servlet-class>com.daverokita.blog.HelloWorld</servlet-class>
+        <servlet-class>sandbox.HelloWorld</servlet-class>
     </servlet>
 
 <!--    <servlet>
@@ -27,7 +27,7 @@
     
     <servlet>
         <servlet-name>CheckBox</servlet-name>
-        <servlet-class>com.daverokita.blog.CheckBox</servlet-class>
+        <servlet-class>sandbox.CheckBox</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -37,7 +37,7 @@
 
     <servlet>
         <servlet-name>ReadParams</servlet-name>
-        <servlet-class>com.daverokita.blog.ReadParams</servlet-class>
+        <servlet-class>sandbox.ReadParams</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -47,7 +47,7 @@
     
     <servlet>
         <servlet-name>Refresh</servlet-name>
-        <servlet-class>com.daverokita.blog.Refresh</servlet-class>
+        <servlet-class>sandbox.Refresh</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -57,7 +57,7 @@
 
     <servlet>
         <servlet-name>showError</servlet-name>
-        <servlet-class>com.daverokita.blog.showError</servlet-class>
+        <servlet-class>sandbox.showError</servlet-class>
     </servlet>
 
     <servlet-mapping>
