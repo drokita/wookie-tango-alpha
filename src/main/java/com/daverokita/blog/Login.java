@@ -22,7 +22,7 @@ public class Login extends HttpServlet {
             rs.forward(request, response);
         } else {
             out.println("Email Address or Password Incorrect");
-            RequestDispatcher rs = request.getRequestDispatcher("login.htm");
+            RequestDispatcher rs = request.getRequestDispatcher("index.htm");
             rs.include(request, response);
         }
     }
