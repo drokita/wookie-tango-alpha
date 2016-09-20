@@ -1,5 +1,49 @@
 body {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
+#index {
+    color: ghostwhite;
+}
+
+.navbar {
+    margin-bottom:0;
+}
+
+.jumbotron {
+    margin-bottom:0
+}
+
+#login {
+    padding-right: 5px;
+}
+
+#menu {
+    -appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    background: transparent;
+    vertical-align: middle;
+    color: ghostwhite;
+    outline: 0;
+}
+
+.menu-btn {
+    color: ghostwhite;
+}
+
+#navbar-button {
+    border-radius: 0;
+    vertical-align: middle;
+    background: transparent;
+    border: 0;
+    color: ghostwhite;
+    text-decoration: none;
+
+}
+
+.glyphicon {
+    font-size: 20px;
+}

@@ -1,0 +1,16 @@
+document.write('<nav class="navbar navbar-inverse navbar-fixed-top">');
+// document.write('<div class="navbar-inner">');
+document.write('<div class="container">');
+document.write('<div class="col-md-6">');
+document.write('<div class="navbar navbar-left"><a id=index class="navbar-brand" href="index.jsp">DaveRokita.com</a></div>');
+document.write('</div>');
+document.write('<div class="col-md-6">');
+document.write('<form class="navbar-form navbar-right" action="/blog/Login" method="POST">');
+document.write('<div id="login" class="form-group"><input type="text" placeholder="Email" class="form-control" name="email"></div>');
+document.write('<div id="login" class="form-group"><input type="password" placeholder="Password" class="form-control" name="password"></div>');
+document.write('<button id="login" type="submit" class="btn btn-success">Sign in</button>');
+document.write('</form>');
+document.write('</div>');
+document.write('</div>');
+// document.write('</div>');
+document.write('</nav>');
