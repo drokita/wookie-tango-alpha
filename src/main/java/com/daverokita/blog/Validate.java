@@ -16,7 +16,10 @@ public class Validate {
                     ("select hash from USERS where email=?");
             ps.setString(1, email);
             rs = ps.executeQuery();
-            rs.next();
+            if(!rs.next()) {
+                validated = false;
+                return validated;
+            }
             hash = rs.getString("hash");
         } catch (Exception e) {
             e.printStackTrace();

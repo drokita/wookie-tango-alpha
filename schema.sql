@@ -38,12 +38,15 @@ DROP TABLE IF EXISTS `BLOGS`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `BLOGS` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `subject` varchar(1000) NOT NULL,
+  `title` varchar(1000) CHARACTER SET utf8 DEFAULT NULL,
   `created` datetime NOT NULL,
-  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `body` mediumtext NOT NULL,
+  `updated` timestamp NULL DEFAULT NULL,
+  `body` mediumtext CHARACTER SET utf8,
+  `userid` tinyint(4) NOT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `category` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,7 +60,7 @@ CREATE TABLE `CATEGORY` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +93,7 @@ CREATE TABLE `USERS` (
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `password` varchar(30) NOT NULL,
+  `hash` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -104,4 +107,4 @@ CREATE TABLE `USERS` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-26 15:58:48
+-- Dump completed on 2016-10-03  9:55:12

@@ -2,6 +2,12 @@
 <html>
 <head>
     <script type="text/javascript" src="includes/bootstrapTop.js"></script>
+    <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+    <script>
+        tinymce.init({
+            selector: '#body'
+        });
+    </script>
 </head>
 
 <body>
@@ -17,6 +23,11 @@
     cookies = request.getCookies();
     String validated = null;
     String header = "includes/loginHeader.js";
+    //String uri = request.getRequestURI();
+    //String params = request.getQueryString();
+    //String pageName = uri.substring(uri.lastIndexOf("/")+1);
+    //String redirect = pageName + params;
+    String redirect = "index2.jsp";
     boolean found = false;
     if (cookies != null) {
         for (int i = 0; i < cookies.length; i++) {
@@ -29,18 +40,19 @@
                     found = true;
                 } else {
                     header = "includes/loginHeader.js";
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("index2.jsp");
                 }
             }
         }
     }
     if (found == false) {
         header = "includes/loginHeader.js";
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("index2.jsp");
     }
 %>
 
 <div>
+    <script type="text/javascript"> var source = "<%= redirect %>";</script>
     <script type="text/javascript">var subject = "<%= validated %>";</script>
     <script type="text/javascript" src="<%= header %>"></script>
     <div class="jumbotron">
@@ -52,12 +64,12 @@
     <form class="container" action="saveBlog" method="POST">
         <div class="container">
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-8">
+                <div class="col-md-2"></div>
+                <div class="col-md-7">
                     <div class="container">
 
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="title">Title:</label>
                                     <input type="text" class="form-control" name="title" id="title">
@@ -66,16 +78,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <label for="url">Url:</label>
-                                    <input type="text" class="form-control" name="url" id="url">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="body">Body:</label>
                                     <textarea type="text" rows="20" class="form-control" name="body" id="body"></textarea>
@@ -90,7 +93,7 @@
                                     <input type="hidden" value="<%=validated%>" name="email">
                                 </div>
                             </div>
-                            <div class="col-md-5"></div>
+                            <div class="col-md-3"></div>
                             <div class="col-md-1">
                                 <div class="dropdown-open">
                                     <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" id="dropdownMenuButton">Category</button>
@@ -130,7 +133,6 @@
             </div>
         </div>
     </form>
-
         <hr>
         <footer>
             <div class="col-md-1"></div>

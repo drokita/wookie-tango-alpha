@@ -17,7 +17,6 @@ public class saveBlog extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String title = request.getParameter("title");
-        String url = request.getParameter("url");
         String body = request.getParameter("body");
         String published = "0";
         String category = request.getParameter("category");
@@ -40,15 +39,15 @@ public class saveBlog extends HttpServlet {
             rs.next();
             userid = rs.getString("id");
 
-            ps = con.prepareStatement("insert into BLOGS (title, urlname, body, published, created, userid, category) values (?, ?, ?, ?, ?, ?, ?)");
+            ps = con.prepareStatement("insert into BLOGS (title, body, published, created, userid, category) values (?, ?, ?, ?, ?, ?)");
             ps.setString(1, title);
-            ps.setString(2, url);
-            ps.setString(3, body);
-            ps.setString(4, published);
-            ps.setTimestamp(5, date);
-            ps.setString(6, userid);
-            ps.setString(7, category);
+            ps.setString(2, body);
+            ps.setString(3, published);
+            ps.setTimestamp(4, date);
+            ps.setString(5, userid);
+            ps.setString(6, category);
             ps.executeUpdate();
+            response.sendRedirect("./category.jsp?category=" + category);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -56,7 +55,6 @@ public class saveBlog extends HttpServlet {
         }
 
         out.println(title);
-        out.println(url);
         out.println(body);
         out.println(published);
         out.println(category);

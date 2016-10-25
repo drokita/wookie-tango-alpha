@@ -37,8 +37,7 @@ public class Login extends HttpServlet {
             response.addCookie(cookie);
             response.sendRedirect("./index.jsp");
         } else {
-            out.println("Email Address or Password Incorrect");
-            response.sendRedirect("./login.jsp");
+            response.sendRedirect("./index.jsp");
         }
     }
 }

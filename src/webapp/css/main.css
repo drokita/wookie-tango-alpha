@@ -47,3 +47,8 @@ body {
 .glyphicon {
     font-size: 20px;
 }
+
+#blogview {
+    padding-right: 15px;
+    padding-left: 0px;
+}
